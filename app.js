@@ -1,23 +1,26 @@
-function timer(secondes){
 
-    if(secondes > 0){
-        console.log(secondes);
-        timer(secondes - 1)
-    }
-    else {
-        console.log(secondes);
-    }
 
-}
+document.querySelector('#a-supprimer').remove();
 
-timer(10);
+//Créer les éléments
+let header = document.createElement('header');
+let menu = document.createElement('div');
+let p    = document.createElement('p');
 
-function somme(nbr){
+// personnaliser
+header.textContent = "Bienvenue";
+header.style.backgroundColor = '#e3b04b';
+header.style.color = 'white';
+header.style.padding = '30px';
+header.style.fontSize = '3em';
+header.style.textAlign = 'center';
 
-    if(nbr == 1){
-        return 1;
-    }
-    return nbr + somme(nbr - 1)
-}
+menu.innerHTML = "<a href='#'>Accueil</a> / <a href='#'>Une autre page</a>";
+menu.style.backgroundColor = '#f1d6ab';
+menu.style.padding = '15px';
 
-console.log(somme(3));
+p.textContent = "Ceci est un paragraphe créé avec javaScript.";
+p.style.margin = "15px";
+
+// editer les éléments
+document.body.append(header, menu, p);
